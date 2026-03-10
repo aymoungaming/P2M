@@ -42,7 +42,11 @@ pipeline {
 
         stage('Docker Build (Dry Run)') {
             steps {
-                echo 'Verifying that the Dockerfile can build successfully...'
+                echo 'Building the Docker image to ensure the Dockerfile works...'
+                dir('Firma-main/Back') {
+                    // We will tag (-t) the image as "marketplace-app"
+                    sh 'docker build -t marketplace-app .'
+                }
             }
         }
 
