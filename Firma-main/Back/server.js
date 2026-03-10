@@ -17,7 +17,7 @@ app.use(bodyParser.json()); // Permet de lire le JSON envoyé par le frontend
 app.use(express.static(path.join(__dirname, '../Front')));
 
 // 1. Connexion à MongoDB (Remplacez l'URL si vous utilisez MongoDB Atlas)
-mongoose.connect('mongodb://mongo:27017/agritechDB')
+mongoose.connect('mongodb://host.docker.internal:27017/agritechDB')
   .then(() => console.log("Connecté à MongoDB"))
   .catch(err => console.error("Erreur connexion Mongo:", err));
 
