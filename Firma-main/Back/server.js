@@ -143,6 +143,6 @@ app.get('/api/products/:id', async (req, res) => {
 
 
 // Lancer le serveur
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0',() => {
     console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
